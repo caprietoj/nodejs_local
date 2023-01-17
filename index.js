@@ -2,12 +2,14 @@ const { conexion } = require("./Base de datos/conexion");
 const express = require("express");
 const cors = require("cors");
 
+require("dotenv").config();
+
 // conexion a la base de datos
 conexion();
 
 // Crear servidor Node
 const app = express();
-const puerto = 3000;
+const puerto = process.env.PORT || 3001;
 // configurar cors
 app.use(cors());
 
